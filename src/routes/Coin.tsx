@@ -77,8 +77,8 @@ const Header = styled.header`
 
 const Title = styled.h1`
   font-size: 48px;
-  color: ${(props) => props.theme.textColor};
-  max-width: 20rem;
+  color: inherit;
+  max-width: 70%;
   text-overflow: ellipsis;
   overflow-x: clip;
   white-space: nowrap;
@@ -99,12 +99,12 @@ const Label = styled.div`
 const Overview = styled.div`
   display: flex;
   justify-content: center;
-
   gap: 4rem;
   background-color: ${(props) => props.theme.cardBgColor};
+  color: inherit;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 0.2rem 0.5rem ${(props) => props.theme.shadowColor};
+  box-shadow: 0 0.2rem 0.5rem  rgba(0, 0, 0, 0.15);
   font-size: inherit;
 `;
 const OverviewItem = styled.div`
@@ -138,10 +138,11 @@ const Tab = styled.span<{ isActive: boolean }>`
   padding: 7px 0px;
   border-radius: 10px;
   color: ${(props) => (props.isActive ? props.theme.textColor : "#979797")};
+  box-shadow: 0 0.2rem 0.5rem  rgba(0, 0, 0, 0.15);
   a {
     display: block;
   }
-  box-shadow: 0 0.2rem 0.5rem ${(props) => props.theme.shadowColor};
+
 `;
 
 const BackBTN = styled(Link)`
@@ -149,7 +150,7 @@ const BackBTN = styled(Link)`
   font-weight: 700;
   background-color: transparent;
   border: none;
-  color: ${(props) => props.theme.textColor};
+  color: inherit;
   position: absolute;
   left: 0;
   span {
@@ -196,7 +197,7 @@ function Coin() {
             </OverviewItem>
             <OverviewItem>
               <Label>Open Source:</Label>
-              <span>${tickersData?.quotes?.USD?.price?.toFixed(3)}</span>
+              <span>${tickersData?.quotes?.USD?.price?.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
             </OverviewItem>
           </Overview>
           <Description>{infoData?.description}</Description>

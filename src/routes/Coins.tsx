@@ -11,42 +11,41 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
-  height: 10vh;
+  height: 13vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
 `;
 
 const CoinsList = styled.ul``;
 
 const Coin = styled.li`
   background-color: ${(props) => props.theme.cardBgColor};
-  color: ${(props) => props.theme.textColor};
+  color: inherit;
   margin-bottom: 10px;
   border-radius: 15px;
-  border: 1px solid ${(props) => props.theme.cardBgColor};
-  box-shadow: 0 0.2rem 1rem ${(props) => props.theme.shadowColor};
+  border: none;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   :hover {
-    box-shadow: 0 0.2rem 1rem #000;
-    transition: box-shadow 0.2s ease-in-out 0s;
+    box-shadow: 0 0.2rem 1rem ${(props) => props.theme.textColor};
+    transition: box-shadow 0.2s ease-in;
   }
   a {
     display: flex;
     align-items: center;
-    transition: color 0.2s ease-in-out;
     padding: 20px;
   }
   &:hover {
     a {
       color: ${(props) => props.theme.accentColor};
+      transition: color 0.2s ease-in;
     }
   }
 `;
 
 const Title = styled.h1`
   font-size: 48px;
-  color: ${(props) => props.theme.textColor};
+  color: inherit;
 `;
 
 const Loader = styled.span`

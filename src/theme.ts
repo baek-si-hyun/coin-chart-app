@@ -8,7 +8,7 @@ export const darkTheme: DefaultTheme = {
   upColor: "#f3214f",
   flatColor: "gray",
   downColor: "#33bd65",
-  shadowColor: "#000",
+
 };
 export const lightTheme: DefaultTheme = {
   textColor: "#000",
@@ -18,5 +18,4 @@ export const lightTheme: DefaultTheme = {
   upColor: "#f3214f",
   flatColor: "gray",
   downColor: "#33bd65",
-  shadowColor: "#dcdcdc",
 };

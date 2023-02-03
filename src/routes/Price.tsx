@@ -29,7 +29,7 @@ const DataBox = styled.div`
   padding: 1rem;
   background-color: rgb(59, 59, 59);
   border-radius: 0.7rem;
-  box-shadow: 0 0.2rem 0.5rem ${(props) => props.theme.shadowColor};
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
   background-color: ${(props) => props.theme.cardBgColor};
 `;
 
