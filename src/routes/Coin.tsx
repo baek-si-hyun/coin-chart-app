@@ -104,7 +104,7 @@ const Overview = styled.div`
   color: inherit;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 0.2rem 0.5rem  rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
   font-size: inherit;
 `;
 const OverviewItem = styled.div`
@@ -138,11 +138,10 @@ const Tab = styled.span<{ isActive: boolean }>`
   padding: 7px 0px;
   border-radius: 10px;
   color: ${(props) => (props.isActive ? props.theme.textColor : "#979797")};
-  box-shadow: 0 0.2rem 0.5rem  rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
   a {
     display: block;
   }
-
 `;
 
 const BackBTN = styled(Link)`
@@ -197,18 +196,32 @@ function Coin() {
             </OverviewItem>
             <OverviewItem>
               <Label>Open Source:</Label>
-              <span>${tickersData?.quotes?.USD?.price?.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
+              <span>
+                $
+                {tickersData?.quotes?.USD?.price
+                  ?.toFixed(3)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </span>
             </OverviewItem>
           </Overview>
           <Description>{infoData?.description}</Description>
           <Overview>
             <OverviewItem>
               <Label>Total Suply:</Label>
-              <span>{tickersData?.total_supply}</span>
+              <span>
+                {tickersData?.total_supply
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </span>
             </OverviewItem>
             <OverviewItem>
               <Label>Max Supply:</Label>
-              <span>{tickersData?.max_supply}</span>
+              <span>
+                {tickersData?.max_supply
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </span>
             </OverviewItem>
           </Overview>
           <Tabs>

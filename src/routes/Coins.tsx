@@ -26,10 +26,6 @@ const Coin = styled.li`
   border-radius: 15px;
   border: none;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
-  :hover {
-    box-shadow: 0 0.2rem 1rem ${(props) => props.theme.textColor};
-    transition: box-shadow 0.2s ease-in;
-  }
   a {
     display: flex;
     align-items: center;
@@ -71,7 +67,6 @@ interface ICoin {
 
 function Coins() {
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
-
   return (
     <Container>
       <Header>
