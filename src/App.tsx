@@ -52,6 +52,7 @@ table {
   border-spacing: 0;
 }
 body {
+  font-family: "Pretendard";
 	background-color: ${(props) => props.theme.bgColor};
 	color: ${(props) => props.theme.textColor};
   transition: background-color 0.3s, color 0.3s;
